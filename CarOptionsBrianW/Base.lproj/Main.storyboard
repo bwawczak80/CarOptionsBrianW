@@ -40,15 +40,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QwO-CG-onJ">
                                 <rect key="frame" x="30" y="60" width="307" height="180"/>
                             </imageView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="675-xu-Tdv">
-                                <rect key="frame" x="55" y="399" width="257" height="110"/>
-                            </pickerView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJN-fb-Hhc">
-                                <rect key="frame" x="166" y="535" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pCj-7V-dcd">
                                 <rect key="frame" x="34" y="319" width="307" height="30"/>
                                 <constraints>
@@ -59,12 +50,24 @@
                                     <segment title="Hardware"/>
                                     <segment title="Wheels"/>
                                     <segment title="Horn"/>
-                                    <segment title="Interior"/>
+                                    <segment title="Decals"/>
                                 </segments>
                                 <connections>
                                     <action selector="featureChoice:" destination="BYZ-38-t0r" eventType="valueChanged" id="6am-ni-G9Y"/>
                                 </connections>
                             </segmentedControl>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="675-xu-Tdv">
+                                <rect key="frame" x="55" y="399" width="257" height="110"/>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RJN-fb-Hhc">
+                                <rect key="frame" x="166" y="535" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7ML-4l-9m0">
+                                <rect key="frame" x="30" y="60" width="307" height="180"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -82,6 +85,7 @@
                             <constraint firstItem="MX0-7b-JHF" firstAttribute="trailing" secondItem="QwO-CG-onJ" secondAttribute="trailing" id="PEp-72-61R"/>
                             <constraint firstItem="pCj-7V-dcd" firstAttribute="centerX" secondItem="W7r-kt-nYV" secondAttribute="centerX" id="U2X-mH-AO7"/>
                             <constraint firstItem="RJN-fb-Hhc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="166" id="cPa-Eo-9rD"/>
+                            <constraint firstItem="7ML-4l-9m0" firstAttribute="bottom" secondItem="MX0-7b-JHF" secondAttribute="bottom" id="cXZ-Nv-Pnl"/>
                             <constraint firstItem="W7r-kt-nYV" firstAttribute="top" secondItem="675-xu-Tdv" secondAttribute="bottom" constant="70" id="hSj-8i-vwv"/>
                             <constraint firstItem="675-xu-Tdv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="55" id="kWa-fB-uBU"/>
                             <constraint firstItem="W7r-kt-nYV" firstAttribute="top" secondItem="RJN-fb-Hhc" secondAttribute="bottom" constant="23" id="kg4-6p-6bo"/>
@@ -89,13 +93,17 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="QwO-CG-onJ" secondAttribute="trailing" constant="38" id="m7L-e7-Bhn"/>
                             <constraint firstItem="QwO-CG-onJ" firstAttribute="centerX" secondItem="675-xu-Tdv" secondAttribute="centerX" id="mPT-iO-L5z"/>
                             <constraint firstItem="pCj-7V-dcd" firstAttribute="top" secondItem="yTi-J9-0yb" secondAttribute="bottom" constant="79" id="p9u-RZ-ryF"/>
+                            <constraint firstItem="7ML-4l-9m0" firstAttribute="top" secondItem="yTi-J9-0yb" secondAttribute="top" id="qDD-Je-eJl"/>
                             <constraint firstItem="MX0-7b-JHF" firstAttribute="bottom" secondItem="QwO-CG-onJ" secondAttribute="bottom" id="qSx-eH-gzR"/>
+                            <constraint firstItem="7ML-4l-9m0" firstAttribute="trailing" secondItem="QwO-CG-onJ" secondAttribute="trailing" id="r2C-6c-8vE"/>
+                            <constraint firstItem="7ML-4l-9m0" firstAttribute="leading" secondItem="MX0-7b-JHF" secondAttribute="leading" id="vDX-6J-Afk"/>
                             <constraint firstItem="MX0-7b-JHF" firstAttribute="leading" secondItem="yTi-J9-0yb" secondAttribute="leading" id="xJp-a6-1Uu"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="W7r-kt-nYV" secondAttribute="bottom" constant="58" id="xni-Ta-LLx"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="decalOverlay" destination="7ML-4l-9m0" id="Ef8-BH-H8h"/>
                         <outlet property="hardwareOverlay" destination="MX0-7b-JHF" id="EfE-3I-dS4"/>
                         <outlet property="pickerView" destination="675-xu-Tdv" id="zmM-lB-tbC"/>
                         <outlet property="segmentedOptions" destination="pCj-7V-dcd" id="Go1-sk-GAO"/>

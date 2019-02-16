@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-	
+
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var options = ["Green", "Blue", "Gun Metal", "Pink"]
@@ -20,11 +20,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var train = AVAudioPlayer()
     var music = AVAudioPlayer()
     
-   
     // get value of selected row
     lazy var selectedValue = options[pickerView.selectedRow(inComponent: 0)]
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let fogHorn = Bundle.main.path(forResource: "fogHorn", ofType: "wav")
@@ -32,35 +31,30 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let standardHorn = Bundle.main.path(forResource: "standard", ofType: "wav")
         let wOw = Bundle.main.path(forResource: "warOfTheWorlds", ofType: "mp3")
         let musicHorn = Bundle.main.path(forResource: "musical", ofType: "wav")
-        
         do {
-        fog = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fogHorn!))
+            fog = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fogHorn!))
         }
         catch{
             print(error)
         }
-        
         do {
             stan = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: standardHorn!))
         }
         catch{
             print(error)
         }
-        
         do {
             train = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: trainHorn!))
         }
         catch{
             print(error)
         }
-        
         do {
             war = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: wOw!))
         }
         catch{
             print(error)
         }
-        
         do {
             music = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicHorn!))
         }
@@ -77,10 +71,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var segmentedOptions: UISegmentedControl!
     @IBOutlet weak var testLabel: UILabel!
+    @IBOutlet weak var decalOverlay: UIImageView!
     
-    
+    // updates picker to based on SegmentedControl choice
     @IBAction func featureChoice(_ sender: UISegmentedControl) {
-        
         switch sender.selectedSegmentIndex {
         case 0:
             options = ["Green", "Blue", "Gun Metal", "Pink"]
@@ -91,7 +85,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             pickerView.reloadAllComponents()
             break
         case 2:
-            options = ["Red", "Standard", "Copper"]
+            options = ["Red", "Standard", "Copper", "OversizeChrome"]
             pickerView.reloadAllComponents()
             break
         case 3:
@@ -99,21 +93,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             pickerView.reloadAllComponents()
             break
         case 4:
-            options = ["Black Leather", "Canvas", "White Leather"]
+            options = ["Flames Decal", "Skull Decal", "Snakes Decal"]
             pickerView.reloadAllComponents()
             break
         default:
             break
         }
-
     }
     
+    // gets value of picker and updates images/sounds
     @IBAction func UpdateChoice(_ sender: UIButton) {
         
         selectedValue = options[pickerView.selectedRow(inComponent: 0)]
         testLabel.text = selectedValue
         switch segmentedOptions.selectedSegmentIndex {
-        case 0: //"Green", "Blue", "Gun Metal", "Pink"
+        case 0:
             switch selectedValue {
             case "Green":
                 stockImage.image = UIImage(named:"peterbiltGreen")
@@ -136,7 +130,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 break
             }
             break
-        case 1: //"Chrome", "Copper", "Black"
+        case 1:
             switch selectedValue {
             case "Chrome":
                 hardwareOverlay.isHidden = true
@@ -154,7 +148,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 break
             }
             break
-        case 2: //"Red", "Standard", "Copper"
+        case 2:
             switch selectedValue {
             case "Red":
                 wheelOverlay.image = UIImage(named: "redRimOverlay")
@@ -167,14 +161,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 wheelOverlay.image = UIImage(named: "copperRimOverlay")
                 wheelOverlay.isHidden = false
                 break
+            case "OversizeChrome":
+                wheelOverlay.image = UIImage(named: "oversizeChrome")
+                wheelOverlay.isHidden = false
+                break
             default:
                 wheelOverlay.isHidden = true
                 break
             }
             break
             
-     
-        case 3: //"Standard", "Train", "Musical"
+            
+        case 3:
             switch selectedValue {
             case "Fog Horn":
                 fog.play()
@@ -194,18 +192,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             default:
                 break
             }
-            
             break
             
-        //case 4: //"Black Leather", "Canvas", "White Leather"
+        case 4:
+            switch selectedValue {
+            case "Flames Decal":
+                decalOverlay.image = UIImage(named: "flamesDecal")
+                break
+            case "Skull Decal":
+                decalOverlay.image = UIImage(named: "skullsDecal")
+                break
+            case "Snakes Decal":
+                decalOverlay.image = UIImage(named: "snakesDecal")
+                break
+                
+            default:
+                break
+            }
         default:
-            stockImage.isHidden = true
             break
+            
         }
-        
     }
-    
-    
     
     
     // Defining the number of components in the pickerView
@@ -223,8 +231,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return options[row]
     }
-    
-    
     
 }
 
