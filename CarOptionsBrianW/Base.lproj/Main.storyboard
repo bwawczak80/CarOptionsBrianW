@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="ipad12_9rounded" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -16,11 +16,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CarOptionsBrianW" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="peterbiltGreen" translatesAutoresizingMaskIntoConstraints="NO" id="yTi-J9-0yb">
-                                <rect key="frame" x="237" y="268" width="550" height="284"/>
+                                <rect key="frame" x="34" y="60" width="307" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="3ip-Vd-ZKa"/>
                                     <constraint firstAttribute="height" constant="180" id="I2I-r3-huP"/>
@@ -46,7 +46,7 @@
                                 </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MX0-7b-JHF">
-                                <rect key="frame" x="237" y="268" width="550" height="284"/>
+                                <rect key="frame" x="34" y="60" width="307" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="QRc-In-LSf"/>
                                     <constraint firstAttribute="height" constant="180" id="SFP-Ie-VlC"/>
@@ -72,7 +72,7 @@
                                 </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QwO-CG-onJ">
-                                <rect key="frame" x="237" y="268" width="550" height="284"/>
+                                <rect key="frame" x="34" y="60" width="307" height="180"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="284" id="T4m-Tf-T0L"/>
                                     <constraint firstAttribute="height" constant="180" id="cT1-RX-5NW"/>
@@ -101,7 +101,7 @@
                                 </variation>
                             </imageView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="675-xu-Tdv">
-                                <rect key="frame" x="352" y="732" width="320" height="109"/>
+                                <rect key="frame" x="24" y="334" width="335" height="109"/>
                                 <color key="backgroundColor" name="grey"/>
                                 <color key="tintColor" name="appBlack"/>
                                 <constraints>
@@ -132,7 +132,7 @@
                                 </variation>
                             </pickerView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7ML-4l-9m0">
-                                <rect key="frame" x="237" y="268" width="550" height="284"/>
+                                <rect key="frame" x="34" y="60" width="307" height="180"/>
                                 <color key="tintColor" name="appBlack"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="180" id="6uu-ut-oC4"/>
@@ -158,8 +158,19 @@
                                     </mask>
                                 </variation>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7r-kt-nYV">
+                                <rect key="frame" x="162" y="492" width="51" height="30"/>
+                                <color key="backgroundColor" name="grey"/>
+                                <color key="tintColor" name="appBlack"/>
+                                <state key="normal" title="Update">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="UpdateChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SP1-Ji-hSa"/>
+                                </connections>
+                            </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="pCj-7V-dcd">
-                                <rect key="frame" x="328" y="625" width="368" height="29"/>
+                                <rect key="frame" x="20" y="286" width="335" height="29"/>
                                 <color key="backgroundColor" name="grey"/>
                                 <segments>
                                     <segment title="Color"/>
@@ -173,17 +184,6 @@
                                     <action selector="featureChoice:" destination="BYZ-38-t0r" eventType="valueChanged" id="6am-ni-G9Y"/>
                                 </connections>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7r-kt-nYV">
-                                <rect key="frame" x="487" y="906" width="51" height="30"/>
-                                <color key="backgroundColor" name="grey"/>
-                                <color key="tintColor" name="appBlack"/>
-                                <state key="normal" title="Update">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="UpdateChoice:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SP1-Ji-hSa"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" name="background"/>
                         <constraints>
@@ -212,6 +212,7 @@
                             <constraint firstItem="W7r-kt-nYV" firstAttribute="top" secondItem="675-xu-Tdv" secondAttribute="bottom" constant="49" id="9pG-B0-env"/>
                             <constraint firstItem="QwO-CG-onJ" firstAttribute="bottom" secondItem="MX0-7b-JHF" secondAttribute="bottom" id="AwA-Wv-bm4"/>
                             <constraint firstItem="MX0-7b-JHF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="237" id="B5I-U8-rvm"/>
+                            <constraint firstItem="675-xu-Tdv" firstAttribute="width" secondItem="pCj-7V-dcd" secondAttribute="width" id="BBX-e4-XaP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="MX0-7b-JHF" secondAttribute="trailing" constant="34" id="Bmn-vY-e50"/>
                             <constraint firstItem="W7r-kt-nYV" firstAttribute="firstBaseline" secondItem="675-xu-Tdv" secondAttribute="baseline" constant="22" symbolType="layoutAnchor" id="CRD-2T-pBd">
                                 <variation key="heightClass=regular-widthClass=regular" constant="85.5"/>
@@ -314,6 +315,7 @@
                                 <exclude reference="f2B-YM-r4q"/>
                                 <exclude reference="mdj-pg-ywA"/>
                                 <exclude reference="o3k-Ux-MWl"/>
+                                <exclude reference="BBX-e4-XaP"/>
                                 <exclude reference="Ifa-MF-axG"/>
                                 <exclude reference="LrZ-pc-reS"/>
                                 <exclude reference="aRX-O1-WpS"/>
@@ -378,6 +380,11 @@
                                 <exclude reference="9pG-B0-env"/>
                                 <include reference="uT7-75-DMk"/>
                                 <include reference="vD0-dq-h7g"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="BBX-e4-XaP"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
