@@ -15,6 +15,12 @@
 		3FE639B622123D9100E772AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FE639B422123D9100E772AC /* LaunchScreen.storyboard */; };
 		3FE639C122123D9100E772AC /* CarOptionsBrianWTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE639C022123D9100E772AC /* CarOptionsBrianWTests.swift */; };
 		3FE639CC22123D9100E772AC /* CarOptionsBrianWUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FE639CB22123D9100E772AC /* CarOptionsBrianWUITests.swift */; };
+		6B31F6542217E8DB004ECEB0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B31F6532217E8DB004ECEB0 /* AVFoundation.framework */; };
+		6B31F65B2217E920004ECEB0 /* fogHorn.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B31F6562217E920004ECEB0 /* fogHorn.wav */; };
+		6B31F65C2217E920004ECEB0 /* train.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B31F6572217E920004ECEB0 /* train.wav */; };
+		6B31F65D2217E920004ECEB0 /* standard.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B31F6582217E920004ECEB0 /* standard.wav */; };
+		6B31F65E2217E920004ECEB0 /* warOfTheWorlds.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6B31F6592217E920004ECEB0 /* warOfTheWorlds.mp3 */; };
+		6B31F65F2217E920004ECEB0 /* musical.wav in Resources */ = {isa = PBXBuildFile; fileRef = 6B31F65A2217E920004ECEB0 /* musical.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +55,12 @@
 		3FE639C722123D9100E772AC /* CarOptionsBrianWUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarOptionsBrianWUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE639CB22123D9100E772AC /* CarOptionsBrianWUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarOptionsBrianWUITests.swift; sourceTree = "<group>"; };
 		3FE639CD22123D9100E772AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B31F6532217E8DB004ECEB0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		6B31F6562217E920004ECEB0 /* fogHorn.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = fogHorn.wav; sourceTree = "<group>"; };
+		6B31F6572217E920004ECEB0 /* train.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = train.wav; sourceTree = "<group>"; };
+		6B31F6582217E920004ECEB0 /* standard.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = standard.wav; sourceTree = "<group>"; };
+		6B31F6592217E920004ECEB0 /* warOfTheWorlds.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = warOfTheWorlds.mp3; sourceTree = "<group>"; };
+		6B31F65A2217E920004ECEB0 /* musical.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = musical.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6B31F6542217E8DB004ECEB0 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +96,7 @@
 				3FE639BF22123D9100E772AC /* CarOptionsBrianWTests */,
 				3FE639CA22123D9100E772AC /* CarOptionsBrianWUITests */,
 				3FE639A622123D8F00E772AC /* Products */,
+				6B31F6522217E8DA004ECEB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,6 +120,7 @@
 				3FE639B422123D9100E772AC /* LaunchScreen.storyboard */,
 				3FE639B722123D9100E772AC /* Info.plist */,
 				3FE639AF22123D8F00E772AC /* CarOptionsBrianW.xcdatamodeld */,
+				6B31F6552217E920004ECEB0 /* sounds */,
 			);
 			path = CarOptionsBrianW;
 			sourceTree = "<group>";
@@ -126,6 +141,26 @@
 				3FE639CD22123D9100E772AC /* Info.plist */,
 			);
 			path = CarOptionsBrianWUITests;
+			sourceTree = "<group>";
+		};
+		6B31F6522217E8DA004ECEB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6B31F6532217E8DB004ECEB0 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6B31F6552217E920004ECEB0 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				6B31F6562217E920004ECEB0 /* fogHorn.wav */,
+				6B31F6572217E920004ECEB0 /* train.wav */,
+				6B31F6582217E920004ECEB0 /* standard.wav */,
+				6B31F6592217E920004ECEB0 /* warOfTheWorlds.mp3 */,
+				6B31F65A2217E920004ECEB0 /* musical.wav */,
+			);
+			path = sounds;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +269,11 @@
 			files = (
 				3FE639B622123D9100E772AC /* LaunchScreen.storyboard in Resources */,
 				3FE639B322123D9100E772AC /* Assets.xcassets in Resources */,
+				6B31F65C2217E920004ECEB0 /* train.wav in Resources */,
+				6B31F65D2217E920004ECEB0 /* standard.wav in Resources */,
+				6B31F65E2217E920004ECEB0 /* warOfTheWorlds.mp3 in Resources */,
+				6B31F65F2217E920004ECEB0 /* musical.wav in Resources */,
+				6B31F65B2217E920004ECEB0 /* fogHorn.wav in Resources */,
 				3FE639AE22123D8F00E772AC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

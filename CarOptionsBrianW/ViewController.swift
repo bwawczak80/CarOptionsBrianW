@@ -7,23 +7,70 @@
 //
 
 import UIKit
-
+import AVFoundation
+	
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     var options = ["Green", "Blue", "Gun Metal", "Pink"]
     
+    // AVAudioPlayer instance to hold AVAudioPlayer instance
+    var fog = AVAudioPlayer()
+    var stan = AVAudioPlayer()
+    var war = AVAudioPlayer()
+    var train = AVAudioPlayer()
+    var music = AVAudioPlayer()
+    
    
     // get value of selected row
-    
     lazy var selectedValue = options[pickerView.selectedRow(inComponent: 0)]
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let fogHorn = Bundle.main.path(forResource: "fogHorn", ofType: "wav")
+        let trainHorn = Bundle.main.path(forResource: "train", ofType: "wav")
+        let standardHorn = Bundle.main.path(forResource: "standard", ofType: "wav")
+        let wOw = Bundle.main.path(forResource: "warOfTheWorlds", ofType: "mp3")
+        let musicHorn = Bundle.main.path(forResource: "musical", ofType: "wav")
         
+        do {
+        fog = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: fogHorn!))
+        }
+        catch{
+            print(error)
+        }
+        
+        do {
+            stan = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: standardHorn!))
+        }
+        catch{
+            print(error)
+        }
+        
+        do {
+            train = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: trainHorn!))
+        }
+        catch{
+            print(error)
+        }
+        
+        do {
+            war = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: wOw!))
+        }
+        catch{
+            print(error)
+        }
+        
+        do {
+            music = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: musicHorn!))
+        }
+        catch{
+            print(error)
+        }
         pickerView.delegate = self
         pickerView.dataSource = self
     }
+    
     @IBOutlet weak var stockImage: UIImageView!
     @IBOutlet weak var hardwareOverlay: UIImageView!
     @IBOutlet weak var wheelOverlay: UIImageView!
@@ -48,7 +95,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             pickerView.reloadAllComponents()
             break
         case 3:
-            options = ["Standard", "Train", "Musical"]
+            options = ["Fog Horn", "Train Horn", "Standard", "War of the Worlds", "Musical"]
             pickerView.reloadAllComponents()
             break
         case 4:
@@ -56,12 +103,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             pickerView.reloadAllComponents()
             break
         default:
-            options = ["Green", "Blue", "Gun Metal", "Pink"]
-            pickerView.reloadAllComponents()
+            break
         }
 
     }
-    
     
     @IBAction func UpdateChoice(_ sender: UIButton) {
         
@@ -128,8 +173,29 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             break
             
+     
+        case 3: //"Standard", "Train", "Musical"
+            switch selectedValue {
+            case "Fog Horn":
+                fog.play()
+                break
+            case "Train Horn":
+                train.play()
+                break
+            case "Standard":
+                stan.play()
+                break
+            case "War of the Worlds":
+                war.play()
+                break
+            case "Musical":
+                music.play()
+                break
+            default:
+                break
+            }
             
-        //case 3: //"Standard", "Train", "Musical"
+            break
             
         //case 4: //"Black Leather", "Canvas", "White Leather"
         default:
@@ -138,6 +204,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
     }
+    
+    
     
     
     // Defining the number of components in the pickerView
@@ -160,4 +228,4 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
 }
 
-    //imageView.image = UIImage(named:"foo")
+
