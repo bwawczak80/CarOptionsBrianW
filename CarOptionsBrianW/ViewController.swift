@@ -70,10 +70,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var wheelOverlay: UIImageView!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var segmentedOptions: UISegmentedControl!
-    @IBOutlet weak var testLabel: UILabel!
     @IBOutlet weak var decalOverlay: UIImageView!
     
-    // updates picker to based on SegmentedControl choice
+    // updates picker based on SegmentedControl choice
     @IBAction func featureChoice(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
         case 0:
@@ -105,7 +104,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func UpdateChoice(_ sender: UIButton) {
         
         selectedValue = options[pickerView.selectedRow(inComponent: 0)]
-        testLabel.text = selectedValue
+        
         switch segmentedOptions.selectedSegmentIndex {
         case 0:
             switch selectedValue {
@@ -215,14 +214,13 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-    
-    // Defining the number of components in the pickerView
+    // Defines the number of components in the pickerView
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
     
-    // Defining the number of rows in the pickerView
+    // Defines the number of rows in the pickerView
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return options.count
     }
@@ -233,5 +231,3 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
 }
-
-
