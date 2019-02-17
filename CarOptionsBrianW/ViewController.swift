@@ -92,7 +92,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             pickerView.reloadAllComponents()
             break
         case 4:
-            options = ["Flames Decal", "Skull Decal", "Snakes Decal"]
+            options = ["Flames Decal", "Skull Decal", "Snakes Decal", "None"]
             pickerView.reloadAllComponents()
             break
         default:
@@ -196,14 +196,21 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         case 4:
             switch selectedValue {
             case "Flames Decal":
+                decalOverlay.isHidden = false
                 decalOverlay.image = UIImage(named: "flamesDecal")
                 break
             case "Skull Decal":
+                decalOverlay.isHidden = false
                 decalOverlay.image = UIImage(named: "skullsDecal")
                 break
             case "Snakes Decal":
+                decalOverlay.isHidden = false
                 decalOverlay.image = UIImage(named: "snakesDecal")
                 break
+            case "None":
+                decalOverlay.isHidden = true
+                break
+                
                 
             default:
                 break
